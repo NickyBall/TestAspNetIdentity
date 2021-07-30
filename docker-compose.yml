@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  testdbcontext:
+    image: ${DOCKER_REGISTRY-}testdbcontext
+    build:
+      context: .
+      dockerfile: TestDbContext/Dockerfile
+    networks:
+     - testdbcontext
+
+networks:
+  testdbcontext:
+    external: true
+    name: testdbcontext
